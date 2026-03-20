@@ -164,41 +164,42 @@ export const FINAL_CTA = {
 
 export const PRICING_TIERS = [
   {
-    name: "Monthly",
+    name: "Month-to-Month",
     price: "$550",
     period: "/month",
-    commitment: "Month to month",
+    commitment: "Month to month, no commitment",
     bestFor: "Try it out with full flexibility",
     popular: false,
+    stripeLink: "https://buy.stripe.com/9B6fZa6zL3ia0vw0xQ1sQ00",
     features: [
       "6 hours of studio time per month",
       "Multi-platform content delivery",
-      
     ],
     additionalHours: "$50/hour",
   },
   {
-    name: "6-Month",
+    name: "12-Month",
     price: "$497",
     period: "/month",
-    commitment: "6 month commitment",
+    commitment: "12 month commitment",
     bestFor: "Best value for committed creators",
     popular: true,
+    stripeLink: "https://buy.stripe.com/eVq9AM0bn9Gy9221BU1sQ01",
     features: [
       "6 hours of studio time per month",
       "Multi-platform content delivery",
-   
     ],
     additionalHours: "$50/hour",
-    savings: "Save $318 over monthly",
+    savings: "Save $636 over monthly",
   },
   {
-    name: "Annual",
-    price: "$450",
-    period: "/month",
-    commitment: "12 month commitment",
+    name: "Annual (Paid Upfront)",
+    price: "$5,400",
+    period: "/year",
+    commitment: "Paid upfront annually",
     bestFor: "Maximum savings for serious creators",
     popular: false,
+    stripeLink: "https://buy.stripe.com/dRm4gscY9f0S6TUeoG1sQ02",
     features: [
       "6 hours of studio time per month",
       "Multi-platform content delivery",
@@ -221,11 +222,11 @@ export const FOUNDING_MEMBER = {
 }
 
 export const COMPARISON_TABLE = {
-  headers: ["Feature", "Monthly", "6-Month", "Annual"],
+  headers: ["Feature", "Month-to-Month", "12-Month", "Annual (Upfront)"],
   rows: [
     ["Studio Time", "6 hours", "6 hours", "6 hours"],
-    ["Price", "$550/mo", "$497/mo", "$450/mo"],
-    ["Commitment", "None", "6 months", "12 months"],
+    ["Price", "$550/mo", "$497/mo", "$5,400/yr"],
+    ["Commitment", "None", "12 months", "Paid upfront"],
     ["Additional Hours", "$50/hour", "$50/hour", "$50/hour"],
     ["Community Access", "✓", "✓", "✓"],
     ["Priority Booking", "✓", "✓", "✓"],

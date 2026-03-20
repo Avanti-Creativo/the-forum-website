@@ -163,12 +163,13 @@ export function PricingTiers() {
                 </CardContent>
                 
                 <CardFooter className="flex flex-col gap-3">
-
+                  <Button className="w-full" variant={tier.popular ? "default" : "outline"} asChild>
+                    <a href={tier.stripeLink} target="_blank" rel="noopener noreferrer">
+                      Join Now
+                    </a>
+                  </Button>
                   <Button variant="ghost" className="w-full" asChild>
                     <Link href="/contact">Book a Studio Tour</Link>
-                  </Button>
-                  <Button className="w-full" variant={tier.popular ? "default" : "outline"} asChild>
-                    <Link href="#blueprint">Start With The Blueprint</Link>
                   </Button>
                 </CardFooter>
               </Card>
