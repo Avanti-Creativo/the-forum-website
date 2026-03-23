@@ -97,10 +97,6 @@ export const COMMUNITY = {
       description: "Priority booking for events, early access to new studio features, and invitations to exclusive South Florida creator gatherings.",
     },
   ],
-  testimonial: {
-    quote: "I came for the studio. I stayed for the community. The connections I've made here have led to three partnerships and more referrals than I can count.",
-    author: "Member since 2024",
-  },
 }
 
 export const BEFORE_AFTER = {
@@ -173,7 +169,9 @@ export const PRICING_TIERS = [
     stripeLink: "https://buy.stripe.com/9B6fZa6zL3ia0vw0xQ1sQ00",
     features: [
       "6 hours of studio time per month",
-      "Multi-platform content delivery",
+      "Professional lightning",
+      "Professional audio system for up to 3 people",
+      "2 4K cameras",
     ],
     additionalHours: "$50/hour",
   },
@@ -187,7 +185,9 @@ export const PRICING_TIERS = [
     stripeLink: "https://buy.stripe.com/eVq9AM0bn9Gy9221BU1sQ01",
     features: [
       "6 hours of studio time per month",
-      "Multi-platform content delivery",
+      "Professional lightning",
+      "Professional audio system for up to 3 people",
+      "2 4K cameras",
     ],
     additionalHours: "$50/hour",
     savings: "Save $636 over monthly",
@@ -202,7 +202,9 @@ export const PRICING_TIERS = [
     stripeLink: "https://buy.stripe.com/dRm4gscY9f0S6TUeoG1sQ02",
     features: [
       "6 hours of studio time per month",
-      "Multi-platform content delivery",
+      "Professional lightning",
+      "Professional audio system for up to 3 people",
+      "2 4K cameras",
     ],
     additionalHours: "$50/hour",
     savings: "Save $1,200 over monthly",

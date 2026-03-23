@@ -6,7 +6,7 @@ import { useRef } from "react";
 import { Button } from "@/components/ui/Button";
 import { GreekKeyBorder } from "@/components/ui/MeanderPattern";
 import { COMMUNITY } from "@/lib/constants";
-import { Users, Repeat, MessageSquare, Star, Quote, ArrowRight } from "lucide-react";
+import { Users, Repeat, MessageSquare, Star, ArrowRight } from "lucide-react";
 
 const iconList = [Users, Repeat, MessageSquare, Star];
 const iconColors = [
@@ -121,51 +121,6 @@ export function Community() {
           })}
         </div>
 
-        {/* Testimonial - modern floating card design */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="max-w-3xl mx-auto"
-        >
-          <div className="relative">
-            {/* Floating quote icon */}
-            <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
-              className="absolute -top-6 left-8 z-10"
-            >
-              <div className="w-12 h-12 rounded-full bg-brand-terracotta flex items-center justify-center shadow-xl">
-                <Quote className="w-6 h-6 text-white" />
-              </div>
-            </motion.div>
-
-            <div className="relative bg-gradient-to-br from-brand-terracotta via-brand-terracotta to-brand-terracotta-dark rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden">
-              {/* Decorative orb */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-brand-gold/20 rounded-full blur-3xl" />
-
-              <blockquote className="relative z-10">
-                <p className="font-heading text-xl md:text-2xl text-white italic leading-relaxed mb-6">
-                  &ldquo;{COMMUNITY.testimonial.quote}&rdquo;
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-                    <span className="font-heading text-lg font-bold text-white">
-                      {COMMUNITY.testimonial.author.charAt(0)}
-                    </span>
-                  </div>
-                  <cite className="not-italic">
-                    <span className="text-white font-medium block">
-                      {COMMUNITY.testimonial.author}
-                    </span>
-                    <span className="text-white/70 text-sm">Founding Member</span>
-                  </cite>
-                </div>
-              </blockquote>
-            </div>
-          </div>
-        </motion.div>
 
         {/* CTA */}
         <motion.div
