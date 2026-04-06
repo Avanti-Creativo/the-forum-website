@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { GreekKeyBorder } from "@/components/ui/MeanderPattern";
 import { SITE_CONFIG, NAV_LINKS, CONTACT_INFO } from "@/lib/constants";
-import { Instagram, Mail, Phone, MapPin, ArrowRight, Send } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight, Send } from "lucide-react";
 import { toast } from "@/components/ui/Toaster";
 import * as React from "react";
 
@@ -46,15 +46,6 @@ export function Footer() {
               {SITE_CONFIG.tagline}
             </p>
             <div className="flex gap-3">
-              <a
-                href={`https://instagram.com/${CONTACT_INFO.instagram.replace("@", "")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full bg-brand-terracotta/10 flex items-center justify-center text-brand-terracotta hover:bg-brand-terracotta hover:text-white transition-all duration-300"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
               <a
                 href={`mailto:${CONTACT_INFO.email}`}
                 className="w-11 h-11 rounded-full bg-brand-terracotta/10 flex items-center justify-center text-brand-terracotta hover:bg-brand-terracotta hover:text-white transition-all duration-300"
@@ -169,7 +160,7 @@ export function Footer() {
         <div className="pt-8 border-t border-brand-terracotta/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
             <p className="text-brand-slate">
-              © {new Date().getFullYear()} The Forum. All rights reserved.
+              © {new Date().getFullYear()} Creators LLC. All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link

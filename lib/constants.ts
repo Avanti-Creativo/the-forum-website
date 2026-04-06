@@ -287,7 +287,7 @@ export const FAQ_PRICING = [
 ]
 
 export const CONTACT_INFO = {
-  address: "Fort Lauderdale, FL",
+  address: "6555 Powerline Rd suite 205, Fort Lauderdale, FL 33309",
   hours: {
     weekday: "Monday - Friday: 8am - 8pm",
     saturday: "Saturday: 9am - 5pm",
