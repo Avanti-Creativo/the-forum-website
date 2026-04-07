@@ -36,7 +36,7 @@ export const HOW_IT_WORKS = {
     },
     {
       number: "02",
-      title: "Walk Into Ready",
+      title: "Walk In Ready",
       description: "Everything's ready for you. Lighting. Mics. Cameras.",
     },
     {
@@ -289,9 +289,9 @@ export const FAQ_PRICING = [
 export const CONTACT_INFO = {
   address: "6555 Powerline Rd suite 205, Fort Lauderdale, FL 33309",
   hours: {
-    weekday: "Monday - Friday: 8am - 8pm",
-    saturday: "Saturday: 9am - 5pm",
-    sunday: "Sunday: By appointment",
+    weekday: "Monday - Friday: 12pm - 9pm",
+    saturday: "Saturday: 7am - 12am",
+    sunday: "Sunday: 7am - 9pm",
   },
   email: "info@theforumstudio.com",
   phone: "(954) 555-0123",
