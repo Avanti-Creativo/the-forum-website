@@ -145,7 +145,7 @@ export const FAQ_HOME = [
   },
   {
     question: "How is this different from renting a studio by the hour?",
-    answer: "Hourly rentals nickel-and-dime you, require you to bring/rent equipment, and give you raw footage with no editing. We're a full-service partnership: equipment included, editing included, strategy included, community included, all for one predictable monthly rate.",
+    answer: "Hourly rentals nickel-and-dime you, require you to bring/rent equipment, and give you raw footage with no editing. We're a full-service partnership: equipment, editing, strategy and community, all for one monthly rate.",
   },
   {
     question: "What if I'm not ready to commit monthly?",
