@@ -293,7 +293,7 @@ export const CONTACT_INFO = {
     saturday: "Saturday: 9am - 5pm",
     sunday: "Sunday: By appointment",
   },
-  email: "hello@theforum.studio",
+  email: "info@theforumstudio.com",
   phone: "(954) 555-0123",
   instagram: "@theforumstudio",
 }
