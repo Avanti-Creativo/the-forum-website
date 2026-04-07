@@ -168,7 +168,7 @@ export const PRICING_TIERS = [
     popular: false,
     stripeLink: "https://buy.stripe.com/9B6fZa6zL3ia0vw0xQ1sQ00",
     features: [
-      "6 hours of studio time per month",
+      "4 hours of studio time per month",
       "Professional lightning",
       "Professional audio system for up to 3 people",
       "2 4K cameras",
@@ -226,7 +226,7 @@ export const FOUNDING_MEMBER = {
 export const COMPARISON_TABLE = {
   headers: ["Feature", "Month-to-Month", "12-Month", "Annual (Upfront)"],
   rows: [
-    ["Studio Time", "6 hours", "6 hours", "6 hours"],
+    ["Studio Time", "4 hours", "6 hours", "6 hours"],
     ["Price", "$550/mo", "$497/mo", "$5,400/yr"],
     ["Commitment", "None", "12 months", "Paid upfront"],
     ["Additional Hours", "$50/hour", "$50/hour", "$50/hour"],
