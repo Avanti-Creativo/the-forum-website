@@ -59,7 +59,7 @@ export const WHATS_INCLUDED = {
     },
     {
       icon: "Wand2",
-      title: "Post-Production Included",
+      title: "Post-Production",
       description: "Expert editing, color correction, audio mastering. Delivered platform-ready for podcast and socials.",
     },
     {
