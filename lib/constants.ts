@@ -251,7 +251,7 @@ export const ADD_ONS = [
   {
     icon: "Share2",
     title: "Social Media Management",
-    price: "Starting at $800/month",
+    price: "Starting at $1500/month",
     description: "We create it, we post it, you approve it",
   },
   {
