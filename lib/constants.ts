@@ -41,7 +41,7 @@ export const HOW_IT_WORKS = {
     },
     {
       number: "03",
-      title: "Record & Release",
+      title: "Record & Release*",
       description: "Talk naturally in a space designed for your comfort. Within days, you receive polished, platform-ready content. All you need to do is post.",
     },
   ],
@@ -59,7 +59,7 @@ export const WHATS_INCLUDED = {
     },
     {
       icon: "Wand2",
-      title: "Post-Production",
+      title: "Post-Production*",
       description: "Expert editing, color correction, audio mastering. Delivered platform-ready for podcast and socials.",
     },
     {
