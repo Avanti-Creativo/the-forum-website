@@ -124,7 +124,7 @@ export function Footer() {
           <div className="lg:col-span-3">
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-brand-terracotta/10">
               <h4 className="font-heading text-lg font-semibold mb-2 text-brand-black">
-                Stay Updated
+                Join the Waitlist
               </h4>
               <p className="text-brand-slate text-sm mb-4">
                 Get tips and updates delivered to your inbox.
