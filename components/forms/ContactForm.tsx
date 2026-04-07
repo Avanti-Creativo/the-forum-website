@@ -53,17 +53,27 @@ export function ContactForm() {
     if (!validateForm()) return;
 
     setIsLoading(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsLoading(false);
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      interest: "",
-      message: "",
-      referral: "",
-    });
-    toast("Message sent! We'll get back to you within 24 hours.", "success");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error("Failed");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        interest: "",
+        message: "",
+        referral: "",
+      });
+      toast("Message sent! We'll get back to you within 24 hours.", "success");
+    } catch {
+      toast("Something went wrong. Please try again.", "error");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

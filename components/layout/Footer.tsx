@@ -19,10 +19,20 @@ export function Footer() {
     if (!email) return;
 
     setIsLoading(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setIsLoading(false);
-    setEmail("");
-    toast("Thanks for subscribing! Check your inbox soon.", "success");
+    try {
+      const res = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) throw new Error("Failed");
+      setEmail("");
+      toast("Thanks for joining the waitlist!", "success");
+    } catch {
+      toast("Something went wrong. Please try again.", "error");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
