@@ -51,7 +51,7 @@ export function Hero() {
       />
 
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10 pt-28 pb-20">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-start lg:items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left Column - Content */}
           <div className="max-w-2xl relative z-30">
             {/* Animated Badge */}
