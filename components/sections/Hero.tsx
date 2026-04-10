@@ -130,7 +130,7 @@ export function Hero() {
           </div>
 
           {/* Right Column - Visual Elements */}
-          <div className="relative hidden lg:block">
+          <div className="relative hidden lg:block overflow-visible">
             {/* Main visual card */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 40 }}
@@ -197,7 +197,7 @@ export function Hero() {
                 className={`absolute ${
                   i === 0 ? "-left-4 top-1/4" :
                   i === 1 ? "-right-4 top-1/3" :
-                  "-left-8 bottom-1/4"
+                  "left-4 -bottom-6"
                 } z-20`}
               >
                 <motion.div
