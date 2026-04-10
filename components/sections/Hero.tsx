@@ -51,7 +51,7 @@ export function Hero() {
       />
 
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10 pt-28 pb-20">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-start lg:items-center">
           {/* Left Column - Content */}
           <div className="max-w-2xl relative z-30">
             {/* Animated Badge */}
@@ -103,7 +103,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-start gap-4 mb-12"
+              className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-start gap-4 mb-12"
             >
               <Button size="xl" asChild className="shadow-xl hover:shadow-2xl transition-all duration-300 rounded-full">
                 <Link href="#blueprint">
@@ -130,7 +130,7 @@ export function Hero() {
           </div>
 
           {/* Right Column - Visual Elements */}
-          <div className="relative hidden lg:block overflow-visible">
+          <div className="relative hidden lg:block">
             {/* Main visual card */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 40 }}
@@ -195,9 +195,9 @@ export function Hero() {
                   stiffness: 200
                 }}
                 className={`absolute ${
-                  i === 0 ? "-left-4 top-1/4" :
+                  i === 0 ? "left-2 -top-6" :
                   i === 1 ? "-right-4 top-1/3" :
-                  "left-4 -bottom-6"
+                  "right-2 -bottom-6"
                 } z-20`}
               >
                 <motion.div
