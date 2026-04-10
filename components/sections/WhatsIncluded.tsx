@@ -82,7 +82,7 @@ export function WhatsIncluded() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-brand-slate leading-relaxed mb-8 lg:hidden"
+              className="text-white/80 leading-relaxed mb-8 lg:hidden"
             >
               {WHATS_INCLUDED.intro}
             </motion.p>
