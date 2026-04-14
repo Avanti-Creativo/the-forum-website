@@ -15,7 +15,7 @@ export function LeadMagnet() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
-    firstName: "",
+    fullName: "",
     email: "",
     contentType: "",
   });
@@ -23,15 +23,14 @@ export function LeadMagnet() {
 
   const contentTypeOptions = [
     { value: "podcast", label: "Podcast" },
-    { value: "video", label: "Video" },
-    { value: "both", label: "Both" },
-    { value: "not-sure", label: "Not sure yet" },
+    { value: "social-media", label: "Social Media Content" },
+    { value: "youtube", label: "YouTube Video" },
   ];
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
-    if (!formData.firstName.trim()) {
-      newErrors.firstName = "First name is required";
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = "Full name is required";
     }
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
@@ -50,18 +49,29 @@ export function LeadMagnet() {
     if (!validateForm()) return;
 
     setIsLoading(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const res = await fetch("/api/blueprint", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    const link = document.createElement("a");
-    link.href = "/downloads/content-blueprint.pdf";
-    link.download = "The-Forum-Content-Blueprint.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+      if (!res.ok) throw new Error("Failed");
 
-    setIsLoading(false);
-    setFormData({ firstName: "", email: "", contentType: "" });
-    toast("Check your inbox! Your blueprint is on its way.", "success");
+      const data = (await res.json()) as { blueprintUrl?: string };
+      const blueprintUrl =
+        data.blueprintUrl ||
+        "https://drive.google.com/file/d/1SRe-2Bkgn1HdV1uwTHjJVAvuWY5iBL_4/view?usp=sharing";
+
+      window.open(blueprintUrl, "_blank", "noopener,noreferrer");
+
+      setFormData({ fullName: "", email: "", contentType: "" });
+      toast("Your blueprint is opening in a new tab!", "success");
+    } catch {
+      toast("Something went wrong. Please try again.", "error");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -182,11 +192,11 @@ export function LeadMagnet() {
 
                   <div className="space-y-5">
                     <Input
-                      label="First Name"
-                      placeholder="Enter your first name"
-                      value={formData.firstName}
-                      onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                      error={errors.firstName}
+                      label="Full Name"
+                      placeholder="Enter your full name"
+                      value={formData.fullName}
+                      onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                      error={errors.fullName}
                       required
                     />
 
