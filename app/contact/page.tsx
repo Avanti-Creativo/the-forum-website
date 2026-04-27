@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Card, CardContent } from "@/components/ui/Card";
 import { ContactForm } from "@/components/forms/ContactForm";
-import { CONTACT_INFO, CONTACT_OPTIONS } from "@/lib/constants";
+import { BOOK_TOUR_URL, CONTACT_INFO, CONTACT_OPTIONS } from "@/lib/constants";
 import {
   CalendarDays,
   MessageCircle,
@@ -69,17 +69,19 @@ export default function ContactPage() {
                     className="w-full"
                     asChild
                   >
-                    <Link
-                      href={
-                        index === 2
-                          ? "#blueprint"
-                          : index === 0
-                          ? "#form"
-                          : "#form"
-                      }
-                    >
-                      {option.cta}
-                    </Link>
+                    {index === 0 ? (
+                      <a
+                        href={BOOK_TOUR_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {option.cta}
+                      </a>
+                    ) : (
+                      <Link href={index === 2 ? "#blueprint" : "#form"}>
+                        {option.cta}
+                      </Link>
+                    )}
                   </Button>
                 </CardContent>
               </Card>
