@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import { useRef } from "react";
 import { Button } from "@/components/ui/Button";
+import { BOOK_TOUR_URL } from "@/lib/constants";
 import { ArrowRight, Calendar } from "lucide-react";
 
 export function PricingFinalCTA() {
@@ -52,10 +53,10 @@ export function PricingFinalCTA() {
               className="border-white/30 text-white hover:bg-white hover:text-brand-black"
               asChild
             >
-              <Link href="/contact">
+              <a href={BOOK_TOUR_URL} target="_blank" rel="noopener noreferrer">
                 <Calendar className="mr-2 h-5 w-5" />
                 Book a Studio Tour
-              </Link>
+              </a>
             </Button>
           </motion.div>
         </div>

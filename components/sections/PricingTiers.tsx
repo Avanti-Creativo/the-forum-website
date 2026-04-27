@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import { Button } from "@/components/ui/Button";
 import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/Card";
-import { PRICING_TIERS, FOUNDING_MEMBER } from "@/lib/constants";
+import { PRICING_TIERS, FOUNDING_MEMBER, BOOK_TOUR_URL } from "@/lib/constants";
 import { Check, Star, Gift, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -169,7 +169,9 @@ export function PricingTiers() {
                     </a>
                   </Button>
                   <Button variant="ghost" className="w-full" asChild>
-                    <Link href="/contact">Book a Studio Tour</Link>
+                    <a href={BOOK_TOUR_URL} target="_blank" rel="noopener noreferrer">
+                      Book a Studio Tour
+                    </a>
                   </Button>
                 </CardFooter>
               </Card>

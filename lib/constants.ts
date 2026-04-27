@@ -298,6 +298,8 @@ export const CONTACT_INFO = {
   instagram: "@theforumstudio",
 }
 
+export const BOOK_TOUR_URL = "https://calendly.com/theforumstudio/book-tour"
+
 export const CONTACT_OPTIONS = [
   {
     icon: "CalendarDays",
