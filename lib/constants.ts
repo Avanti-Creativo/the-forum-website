@@ -300,6 +300,9 @@ export const CONTACT_INFO = {
 
 export const BOOK_TOUR_URL = "https://calendly.com/theforumstudio/book-tour"
 
+export const BLUEPRINT_URL =
+  "https://drive.google.com/file/d/1A-osjwVtkXqtAYu4eZTdgwQ3w5X-VaWf/view?usp=sharing"
+
 export const CONTACT_OPTIONS = [
   {
     icon: "CalendarDays",
