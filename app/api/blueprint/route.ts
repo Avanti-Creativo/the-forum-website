@@ -4,7 +4,7 @@ const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "The Forum <onboarding@resend.dev>";
 const TO_EMAIL = "info@theforumstudio.com";
 const BLUEPRINT_URL =
-  "https://drive.google.com/file/d/1SRe-2Bkgn1HdV1uwTHjJVAvuWY5iBL_4/view?usp=sharing";
+  "https://drive.google.com/file/d/1A-osjwVtkXqtAYu4eZTdgwQ3w5X-VaWf/view?usp=sharing";
 
 const CONTENT_TYPE_LABELS: Record<string, string> = {
   podcast: "Podcast",
