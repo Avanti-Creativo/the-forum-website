@@ -61,7 +61,7 @@ export function LeadMagnet() {
       const data = (await res.json()) as { blueprintUrl?: string };
       const blueprintUrl =
         data.blueprintUrl ||
-        "https://drive.google.com/file/d/1SRe-2Bkgn1HdV1uwTHjJVAvuWY5iBL_4/view?usp=sharing";
+        "https://drive.google.com/file/d/1A-osjwVtkXqtAYu4eZTdgwQ3w5X-VaWf/view?usp=sharing";
 
       window.open(blueprintUrl, "_blank", "noopener,noreferrer");
 
