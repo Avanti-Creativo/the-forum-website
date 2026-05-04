@@ -5,7 +5,7 @@ import { Logo } from "./Logo";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { GreekKeyBorder } from "@/components/ui/MeanderPattern";
-import { SITE_CONFIG, NAV_LINKS, CONTACT_INFO } from "@/lib/constants";
+import { BLUEPRINT_URL, SITE_CONFIG, NAV_LINKS, CONTACT_INFO } from "@/lib/constants";
 import { Mail, Phone, MapPin, ArrowRight, Send } from "lucide-react";
 import { toast } from "@/components/ui/Toaster";
 import * as React from "react";
@@ -83,12 +83,14 @@ export function Footer() {
                 </li>
               ))}
               <li>
-                <Link
-                  href="#blueprint"
+                <a
+                  href={BLUEPRINT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-brand-slate hover:text-brand-terracotta transition-colors text-sm tracking-wide"
                 >
                   Get The Blueprint
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

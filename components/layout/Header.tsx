@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Logo } from "./Logo";
 import { Button } from "@/components/ui/Button";
-import { NAV_LINKS } from "@/lib/constants";
+import { BLUEPRINT_URL, NAV_LINKS } from "@/lib/constants";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -81,10 +81,14 @@ export function Header() {
                   useLightNav && "bg-white text-brand-terracotta hover:bg-white/90"
                 )}
               >
-                <Link href="#blueprint">
+                <a
+                  href={BLUEPRINT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Get The Blueprint
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                </a>
               </Button>
             </div>
 
@@ -146,10 +150,14 @@ export function Header() {
                 transition={{ delay: NAV_LINKS.length * 0.1 }}
               >
                 <Button size="lg" className="mt-4 w-full max-w-xs rounded-full shadow-lg" asChild>
-                  <Link href="#blueprint">
+                  <a
+                    href={BLUEPRINT_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Get The Blueprint
                     <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
+                  </a>
                 </Button>
               </motion.div>
             </nav>

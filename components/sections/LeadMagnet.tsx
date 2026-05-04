@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { GreekKeyBorder } from "@/components/ui/MeanderPattern";
 import { Input } from "@/components/ui/Input";
 import { Select } from "@/components/ui/Select";
-import { LEAD_MAGNET } from "@/lib/constants";
+import { BLUEPRINT_URL, LEAD_MAGNET } from "@/lib/constants";
 import { toast } from "@/components/ui/Toaster";
 import { Check, FileText, Sparkles, Download, ArrowRight } from "lucide-react";
 
@@ -59,9 +59,7 @@ export function LeadMagnet() {
       if (!res.ok) throw new Error("Failed");
 
       const data = (await res.json()) as { blueprintUrl?: string };
-      const blueprintUrl =
-        data.blueprintUrl ||
-        "https://drive.google.com/file/d/1A-osjwVtkXqtAYu4eZTdgwQ3w5X-VaWf/view?usp=sharing";
+      const blueprintUrl = data.blueprintUrl || BLUEPRINT_URL;
 
       window.open(blueprintUrl, "_blank", "noopener,noreferrer");
 
