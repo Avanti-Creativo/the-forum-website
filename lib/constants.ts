@@ -209,6 +209,20 @@ export const PRICING_TIERS = [
     additionalHours: "$50/hour",
     savings: "Save $1,200 over monthly",
   },
+  {
+  name: "Hourly Rate",
+  price: "$55",
+  period: "/hour",
+  commitment: "No commitment",
+  bestFor: "Hourly Rate, no commitment",
+  popular: false,
+  stripeLink: "#",
+  features: [
+    "Professional lightning",
+    "Professional audio system for up to 3 people",
+    "2 4K cameras",
+  ],
+},
 ]
 
 export const FOUNDING_MEMBER = {
