@@ -109,133 +109,150 @@ export function PricingTiers() {
         {/* <FoundingMemberBanner /> */}
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {PRICING_TIERS.map((tier, index) => (
-            <motion.div
-              key={tier.name}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                duration: 0.6,
-                delay: 0.2 + index * 0.1,
-              }}
-              className={cn(
-                tier.name === "Hourly Rate" && "lg:col-start-2"
-              )}
-            >
-              <Card
-                className={cn(
-                  "h-full relative overflow-hidden",
-                  tier.popular &&
-                    "border-brand-bronze shadow-lg scale-[1.02]"
-                )}
+          {PRICING_TIERS.map((tier, index) => {
+            const isHourly = tier.name === "Hourly Rate";
+
+            return (
+              <motion.div
+                key={tier.name}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.2 + index * 0.1,
+                }}
+                className={cn(isHourly && "lg:col-span-3")}
               >
-                {tier.popular && (
-                  <div className="absolute top-0 left-0 right-0 bg-brand-bronze text-white text-center py-2 text-sm font-medium">
-                    <Star className="w-4 h-4 inline mr-1" />
-                    MOST POPULAR
-                  </div>
-                )}
-
-                <CardHeader
-                  className={cn(tier.popular && "pt-14")}
+                <Card
+                  className={cn(
+                    "h-full relative overflow-hidden",
+                    tier.popular &&
+                      "border-brand-bronze shadow-lg scale-[1.02]",
+                    isHourly &&
+                      "lg:flex lg:flex-row lg:items-center lg:gap-8"
+                  )}
                 >
-                  <div className="mb-4">
-                    <h3 className="font-heading text-2xl font-semibold text-brand-black">
-                      {tier.name}
-                    </h3>
-
-                    {tier.bestFor && (
-                      <p className="text-sm text-brand-slate mt-1">
-                        {tier.bestFor}
-                      </p>
-                    )}
-                  </div>
-
-                  <div className="flex items-baseline gap-1">
-                    <span className="font-heading text-4xl font-bold text-brand-black">
-                      {tier.price}
-                    </span>
-
-                    {tier.period && (
-                      <span className="text-brand-slate">
-                        {tier.period}
-                      </span>
-                    )}
-                  </div>
-
-                  {tier.commitment && (
-                    <p className="text-sm text-brand-slate mt-2">
-                      {tier.commitment}
-                    </p>
-                  )}
-
-                  {tier.savings && (
-                    <p className="text-sm text-brand-bronze font-medium mt-1">
-                      {tier.savings}
-                    </p>
-                  )}
-                </CardHeader>
-
-                <CardContent className="space-y-4">
-                  <ul className="space-y-3">
-                    {tier.features.map((feature, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-2"
-                      >
-                        <Check className="w-5 h-5 text-brand-bronze flex-shrink-0 mt-0.5" />
-
-                        <span className="text-sm text-brand-slate">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {tier.additionalHours && (
-                    <div className="pt-4 border-t border-border">
-                      <p className="text-sm text-brand-slate">
-                        <strong className="text-brand-black">
-                          Additional hours:
-                        </strong>{" "}
-                        {tier.additionalHours}
-                      </p>
+                  {tier.popular && (
+                    <div className="absolute top-0 left-0 right-0 bg-brand-bronze text-white text-center py-2 text-sm font-medium">
+                      <Star className="w-4 h-4 inline mr-1" />
+                      MOST POPULAR
                     </div>
                   )}
-                </CardContent>
 
-                <CardFooter className="flex flex-col gap-3">
-                  <Button
-                    className="w-full"
-                    variant={tier.popular ? "default" : "outline"}
-                    asChild
+                  <CardHeader
+                    className={cn(
+                      tier.popular && "pt-14",
+                      isHourly && "lg:flex-1 lg:border-b-0"
+                    )}
                   >
-                    <a
-                      href={tier.stripeLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Join Now
-                    </a>
-                  </Button>
+                    <div className="mb-4">
+                      <h3 className="font-heading text-2xl font-semibold text-brand-black">
+                        {tier.name}
+                      </h3>
 
-                  <Button
-                    variant="ghost"
-                    className="w-full"
-                    asChild
+                      {tier.bestFor && (
+                        <p className="text-sm text-brand-slate mt-1">
+                          {tier.bestFor}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="flex items-baseline gap-1">
+                      <span className="font-heading text-4xl font-bold text-brand-black">
+                        {tier.price}
+                      </span>
+
+                      {tier.period && (
+                        <span className="text-brand-slate">
+                          {tier.period}
+                        </span>
+                      )}
+                    </div>
+
+                    {tier.commitment && (
+                      <p className="text-sm text-brand-slate mt-2">
+                        {tier.commitment}
+                      </p>
+                    )}
+
+                    {tier.savings && (
+                      <p className="text-sm text-brand-bronze font-medium mt-1">
+                        {tier.savings}
+                      </p>
+                    )}
+                  </CardHeader>
+
+                  <CardContent
+                    className={cn(
+                      "space-y-4",
+                      isHourly && "lg:flex-1 lg:pt-6"
+                    )}
                   >
-                    <a
-                      href={BOOK_TOUR_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <ul className="space-y-3">
+                      {tier.features.map((feature, i) => (
+                        <li
+                          key={i}
+                          className="flex items-start gap-2"
+                        >
+                          <Check className="w-5 h-5 text-brand-bronze flex-shrink-0 mt-0.5" />
+
+                          <span className="text-sm text-brand-slate">
+                            {feature}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {tier.additionalHours && (
+                      <div className="pt-4 border-t border-border">
+                        <p className="text-sm text-brand-slate">
+                          <strong className="text-brand-black">
+                            Additional hours:
+                          </strong>{" "}
+                          {tier.additionalHours}
+                        </p>
+                      </div>
+                    )}
+                  </CardContent>
+
+                  <CardFooter
+                    className={cn(
+                      "flex flex-col gap-3",
+                      isHourly && "lg:flex-1"
+                    )}
+                  >
+                    <Button
+                      className="w-full"
+                      variant={tier.popular ? "default" : "outline"}
+                      asChild
                     >
-                      Book a Studio Tour
-                    </a>
-                  </Button>
-                </CardFooter>
-              </Card>
-            </motion.div>
-          ))}
+                      <a
+                        href={tier.stripeLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Join Now
+                      </a>
+                    </Button>
+
+                    <Button
+                      variant="ghost"
+                      className="w-full"
+                      asChild
+                    >
+                      <a
+                        href={BOOK_TOUR_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Book a Studio Tour
+                      </a>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
