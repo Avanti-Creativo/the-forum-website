@@ -216,7 +216,7 @@ export const PRICING_TIERS = [
   commitment: "No commitment",
   bestFor: "Hourly Rate, no commitment",
   popular: false,
-  stripeLink: "#",
+  stripeLink: "https://buy.stripe.com/bJe4gsf6h3ia0vweoG1sQ03",
   features: [
     "Professional lightning",
     "Professional audio system for up to 3 people",
