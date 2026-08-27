@@ -119,8 +119,9 @@ export function PricingTiers() {
                 delay: 0.2 + index * 0.1,
               }}
               className={cn(
-                tier.name === "Hourly Rate" && "lg:col-start-2"
-              )}
+  tier.name === "Hourly Rate" &&
+    "lg:col-span-3"
+)}
             >
               <Card
                 className={cn(
